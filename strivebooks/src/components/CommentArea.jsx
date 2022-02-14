@@ -51,13 +51,14 @@ class CommentArea extends Component {
   render() {
     console.log(this.props.selectedBookAsin);
     return (
-      <>
+      <div className="sticky-top">
         <h3>What others say about this book:</h3>
         <ListGroup>
           {this.props.selectedBookAsin ? (
             this.state.bookComments.length == 0 ? (
               <ListGroup.Item>
-                No comments for this book<i className="bi bi-emoji-frown ml-2"></i>
+                No comments for this book
+                <i className="bi bi-emoji-frown ml-2"></i>
               </ListGroup.Item>
             ) : (
               this.state.bookComments.map((comment) => (
@@ -70,7 +71,7 @@ class CommentArea extends Component {
             <ListGroup.Item>Select a book to show comments</ListGroup.Item>
           )}
         </ListGroup>
-      </>
+      </div>
     );
   }
 }
