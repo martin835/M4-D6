@@ -24,14 +24,11 @@ class SingleBookClass extends Component {
   render() {
     return (
       <Col
-        xs={12}
-        sm={12}
-        md={6}
-        lg={4}
-        xl={3}
+        xs={4}
         className="mb-3"
         key={this.props.asin}
         /* onClick={(event) => this.toggleState(event)} */
+        onClick={() => this.props.bookClicked(this.props.asin)}
       >
         <Card>
           <Card.Img variant="top" src={this.props.img} />
@@ -41,8 +38,8 @@ class SingleBookClass extends Component {
             </Card.Subtitle>
             <Card.Title>{this.props.title}</Card.Title>
             <Card.Text>{this.props.price} $</Card.Text>
-            
-            <Comments asin={this.props.asin}/>
+
+            <Comments asin={this.props.asin} />
           </Card.Body>
         </Card>
       </Col>
